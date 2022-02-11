@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{201FF5BC-2495-4A66-9E15-1508B1903E3D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Miracle_Business_Solutions_Framework</RootNamespace>
+    <AssemblyName>Miracle Business Solutions Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Honorbuddy">
+      <HintPath>..\..\..\..\Honorbuddy\Honorbuddy.exe</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tripper.Tools">
+      <HintPath>..\..\..\..\Honorbuddy\Tripper.Tools.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Auras.cs" />
+    <Compile Include="Base\Enums.cs" />
+    <Compile Include="Extensions\Items.cs" />
+    <Compile Include="Base\Lists.cs" />
+    <Compile Include="Base\Spellbook.cs" />
+    <Compile Include="Base\Unit.cs" />
+    <Compile Include="Extensions\CombatLogHandler.cs" />
+    <Compile Include="Extensions\Logger.cs" />
+    <Compile Include="Extensions\Performance.cs" />
+    <Compile Include="Extensions\SequenceCast.cs" />
+    <Compile Include="Extensions\TypeConverters.cs" />
+    <Compile Include="Managers\CacheManager.cs" />
+    <Compile Include="Managers\CastManager.cs" />
+    <Compile Include="Managers\HotkeyManager.cs" />
+    <Compile Include="Managers\PetManager.cs" />
+    <Compile Include="Managers\TalentManager.cs" />
+    <Compile Include="Managers\TargetManager.cs" />
+    <Compile Include="Root.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rotations\Common.cs" />
+    <Compile Include="Rotations\Specialization1.cs" />
+    <Compile Include="Rotations\Specialization2.cs" />
+    <Compile Include="Rotations\Specialization3.cs" />
+    <Compile Include="UserInterfaces\Interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\Interface.Designer.cs">
+      <DependentUpon>Interface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterfaces\Settings\MySettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UserInterfaces\Interface.resx">
+      <DependentUpon>Interface.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
